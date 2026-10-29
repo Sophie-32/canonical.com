@@ -1,6 +1,6 @@
 # CP1 - Owner specification acceptance
 
-**State**: pending. **Requested artifact**: [spec-r3](../spec.md).
+**State**: owner-cleared 2026-10-29; see [the owner verdict](CP1-owner-verdict.md). **Requested artifact**: [spec-r3](../spec.md).
 **Scope**: `001-notification-centre/spec-r3`.
 
 The owner requested workflow-kit setup and an MVP specification on 2026-10-29.

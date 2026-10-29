@@ -11,7 +11,7 @@
 
 | ID | Gate | Verdict link | State |
 |---|---|---|---|
-| CP1 | Owner specification acceptance | [request](reviews/CP1-request.md) | pending |
+| CP1 | Owner specification acceptance | [request](reviews/CP1-request.md), [verdict](reviews/CP1-owner-verdict.md) | owner-cleared |
 
 **Input**: Iterate on the notification-centre prototype in Sophie-32's fork.
 A jobseeker, hiring manager or recruiter arrives from an explicitly defined
