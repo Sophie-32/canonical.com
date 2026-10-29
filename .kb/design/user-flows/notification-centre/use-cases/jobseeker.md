@@ -25,4 +25,6 @@ Persona: Alex Morgan. Role: `jobseeker`. Scope: own applications and saved searc
 - Draft expires while unread: notification stays, action changes to "Start again".
 - Alex never sees hiring-side notifications (candidate review, feedback), including counts.
 
+See also the [12 jobseeker journeys](jobseeker-journeys.md) and [stumbling blocks](../edge-cases.md).
+
 Back to [overview](../overview.md).
