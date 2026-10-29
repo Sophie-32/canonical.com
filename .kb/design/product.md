@@ -36,7 +36,7 @@ Out of scope: real authentication, email/webhook/PagerDuty delivery, digest sche
 
 | # | Decision | Why |
 | :-- | :-- | :-- |
-| D1 | Adapt the enterprise notification schema ([DE100](https://gist.github.com/hartmutobendorf/d135c445816d0a2a87cc6d363450096c)) rather than invent a new one | Reuse; keeps careers consistent with other Canonical products |
+| D1 | Adapt the enterprise notification schema (DE100, "Enterprise notification schema guidelines") rather than invent a new one | Reuse; keeps careers consistent with other Canonical products |
 | D2 | **Read** and **task done** are separate states | Reading is an interruption being seen; resolving is the work being done. Matches schema `delivery_log` (`read`, `resolved`) and `actionable` |
 | D3 | `actionable` is shared across a role: if one recruiter resolves a task, others see it as done | Schema "multi-player" rule; avoids duplicated effort |
 | D4 | Notifications address **roles**, resolved to people at send time | Schema Recipients; people change roles more often than events change |
