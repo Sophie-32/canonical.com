@@ -23,8 +23,9 @@
       title: 'Your application moved to interview', body: 'Senior Software Engineer, Ubuntu Foundations: the hiring team would like to schedule a first call.',
       ctx: { Vacancy: 'Senior Software Engineer, Ubuntu Foundations', Stage: 'Interview' }, action: 'View application', when: 'Today, 8:03 AM', ts: 20 },
     { id: 'n02', event: 'application_draft_expiring', roles: ['jobseeker'], scope: 'alex', group: 'application', sev: 'MEDIUM', actionable: true,
-      title: 'Complete your application: draft closes in 3 days', body: 'Your draft for Cloud Solutions Architect has not been submitted yet.',
-      ctx: { Vacancy: 'Cloud Solutions Architect', Closes: 'Sun 1 Nov' }, action: 'Complete application', when: 'Yesterday, 5:40 PM', ts: 18 },
+      title: 'Complete your application: draft closes Sun 1 Nov, 11:59 PM UTC', body: 'Your draft for Cloud Solutions Architect (REQ-CSA-02) has not been submitted yet.',
+      ctx: { Vacancy: 'Cloud Solutions Architect', Requisition: 'REQ-CSA-02 · Remote, EMEA', Closes: 'Sun 1 Nov 2026, 11:59 PM UTC' }, action: 'Complete application', when: 'Wed 28 Oct, 5:40 PM', ts: 18,
+      doneTitle: 'Application submitted: Cloud Solutions Architect', doneBody: 'REQ-CSA-02 was submitted and received. We will update you here when the status changes.', doneLabel: 'View application' },
     { id: 'n03', event: 'vacancy_match', roles: ['jobseeker'], scope: 'alex', group: 'match', sev: 'INFO', actionable: false,
       title: '7 new job postings match your skills', body: 'Based on your profile: Python, Kubernetes, Linux.',
       ctx: { Skills: 'Python, Kubernetes, Linux' }, action: 'View matching roles', href: '../all/index.html', when: 'Today, 9:12 AM', ts: 21 },
@@ -83,6 +84,7 @@
   S.persona = S.persona && PERSONAS[S.persona] ? S.persona : 'alex';
   S.read = S.read || {};   // per persona: id -> true
   S.done = S.done || {};   // shared per role: id -> name
+  S.done = S.done || {};
   save(S);
 
   function persona() { return PERSONAS[S.persona]; }
@@ -146,10 +148,10 @@
         if (unread) { box.style.borderLeft = '4px solid #0e8420'; box.style.paddingLeft = '.5rem'; }
         var c = el('div', 'p-notification__content');
         var h = el('h3', 'p-notification__title');
-        var a = el('a', null, n.title); a.href = detailUrl(n);
+        var a = el('a', null, done && n.doneTitle ? n.doneTitle : n.title); a.href = detailUrl(n);
         a.style.fontWeight = unread ? '700' : '400';
         h.appendChild(a); c.appendChild(h);
-        c.appendChild(el('p', 'p-notification__message', n.body));
+        c.appendChild(el('p', 'p-notification__message', done && n.doneBody ? n.doneBody : n.body));
         var meta = el('p', 'p-text--small u-text--muted');
         var bits = [n.when, unread ? 'Unread' : 'Read'];
         if (done) bits.push(doneBy(n) ? 'Done by ' + doneBy(n) : 'Done');
@@ -157,7 +159,7 @@
         meta.textContent = bits.join(' · ');
         c.appendChild(meta);
         var act = el('p', null);
-        var link = el('a', null, (done ? (n.action.indexOf('View') === 0 ? n.action : 'View') : n.action) + ' ›');
+        var link = el('a', null, (done ? (n.doneLabel || (n.action.indexOf('View') === 0 ? n.action : 'View')) : n.action) + ' ›');
         link.href = a.href; link.dataset.open = n.id; act.appendChild(link); c.appendChild(act);
         box.appendChild(c); li.appendChild(box); ul.appendChild(li);
       });
@@ -183,7 +185,7 @@
       visible(persona()).forEach(function (n) { S.read[key(n)] = true; }); save(S); paint();
     });
     document.getElementById('notif-reset').addEventListener('click', function () {
-      S = { persona: S.persona, read: {}, done: {} }; save(S); paint();
+      S = { persona: S.persona, read: {}, done: {}, signedIn: false }; save(S); paint();
     });
     paint();
   }
@@ -200,6 +202,38 @@
       return;
     }
     markRead(n); updateBell();
+    function paintDraft() {
+      root.textContent = '';
+      var done = isDone(n);
+      root.appendChild(el('p', 'p-heading--5', 'Prototype workspace · ' + p.label));
+      root.appendChild(el('h1', 'p-heading--2', 'Complete application'));
+      var snap = el('table'); var sb = el('tbody');
+      [['Role', n.ctx.Vacancy], ['Requisition', n.ctx.Requisition], ['Status', done ? 'Submitted' : 'Draft, not submitted'],
+       ['Closes', n.ctx.Closes], ['Saved in your draft', 'CV, contact details, 4 of 4 screening answers']].forEach(function (r) {
+        var tr = el('tr'); tr.appendChild(el('th', null, r[0])); tr.appendChild(el('td', null, r[1])); sb.appendChild(tr);
+      });
+      snap.appendChild(sb); root.appendChild(snap);
+      var live = el('div'); live.setAttribute('role', 'status'); root.appendChild(live);
+      var bar = el('p');
+      if (done) {
+        var d = el('div', 'p-notification--positive'); var dc = el('div', 'p-notification__content');
+        dc.appendChild(el('h2', 'p-notification__title', 'Application submitted'));
+        dc.appendChild(el('p', 'p-notification__message', 'Received ' + (S.receipt || 'just now') + '. Your application for ' + n.ctx.Vacancy + ' (REQ-CSA-02) is with the hiring team. Updates will appear in your notification centre.'));
+        d.appendChild(dc); live.appendChild(d);
+      } else {
+        root.appendChild(el('p', null, 'Review your saved draft, then submit before the closing date. Nothing else is required.'));
+        var b = el('button', 'p-button--positive', 'Submit application');
+        b.addEventListener('click', function () {
+          S.receipt = new Date().toLocaleString('en-GB', { timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + ' UTC';
+          markDone(n); paintDraft();
+        });
+        bar.appendChild(b);
+      }
+      var back = el('a', 'p-button', done ? 'Back to notifications ›' : '‹ Back to notifications'); back.href = '../notifications/index.html';
+      bar.appendChild(back); root.appendChild(bar);
+      root.appendChild(el('p', 'p-text--small u-text--muted', 'Demo only: simulated application form; nothing is sent.'));
+    }
+    if (n.id === 'n02') { paintDraft(); return; }
     function paint() {
       root.textContent = '';
       var done = isDone(n);

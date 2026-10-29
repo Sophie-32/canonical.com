@@ -1,6 +1,6 @@
 # J-EMAIL-DRAFT: reminder email to a completed draft application
 
-**Owner**: S (journey and product decisions, implementation). **Consumer**: L (evaluation). **Status**: scope agreed, slice in progress (see [Handoff to L](#handoff-to-l)).
+**Owner**: S (journey and product decisions, implementation). **Consumer**: L (evaluation). **Status**: scope agreed, slice runnable (see [Handoff to L](#handoff-to-l)).
 Part of the [entry-context seeds](../entry-contexts.md). Assumptions are **hypotheses**, not findings: see the [assumption register](../../../assumptions.md).
 
 ## Scope (deliberately small)
@@ -34,7 +34,7 @@ Design references use the [shared catalogue](../entry-contexts.md#shared-subject
 | JOB-02 | Cloud Solutions Architect (synthetic requisition `REQ-CSA-02`, Remote, EMEA) | Text in the email, `n02` context and the draft page |
 | APP-02 | Alex's **draft** (not submitted) application for JOB-02 | The draft page for `n02` |
 | EVENT-02 | Draft expires Sun 1 Nov 2026, 11:59 PM UTC; reminder sent Wed 28 Oct 2026, 5:40 PM | Email date and `n02` timestamp |
-| EMAIL-03 | The reminder email, below | `docs/careers/app/mail/index.html?m=email-03` |
+| EMAIL-03 | The reminder email, below | `docs/careers/app/mail/index.html` |
 | n02 | Existing notification "Complete your application" | `docs/careers/app/notifications.js`, id `n02` |
 | Workspace | Existing simulated workspace | `docs/careers/app/index.html?n=n02` |
 
@@ -88,16 +88,16 @@ The CTA goes to the **draft itself** (`?n=n02`), not the notification centre and
 
 ## Handoff to L
 
-Filled in at each runnable slice. **Not yet runnable** until the slice below is committed.
+Filled in at each runnable slice. Slice runnable.
 
 | Item | Value |
 | :-- | :-- |
-| Commit | _set when the slice is committed_ |
+| Commit | see commit message / chat handoff |
 | Preview | Pinned checkout: `cd docs && python3 -m http.server 8010` |
-| Entry URL | `http://localhost:8010/careers/app/mail/index.html?m=email-03` |
+| Entry URL | `http://localhost:8010/careers/app/mail/index.html` |
 | Persona and session | Alex Morgan, signed out |
 | Centre / workspace routes | `…/careers/notifications/index.html` · `…/careers/app/index.html?n=n02` |
-| Reset | Open the centre and use "Reset demo state", or clear site data for the origin |
+| Reset | Open the centre and use the reset control, or clear site data for the origin |
 | Fixture mapping | See the table above |
 | Known limits (not for blind reviewers) | No expired-deadline state; no real email; "what happens next" timeframe is a placeholder |
 
