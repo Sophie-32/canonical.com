@@ -36,3 +36,12 @@ Requested action: evaluate commit `487831cf` (a later commit may only add this n
 - Fixtures: email -> n02 -> `careers/app/index.html?n=n02`; mapping in the journey record.
 - Assumptions (hypotheses): A-002, A-007, A-008, A-011, partly A-009.
 Please send findings here or in `reviews/`; S will triage the highest-impact one.
+
+## L's harness - CP1 owner acceptance
+
+Recipient: L. Scope: `001-notification-centre/spec-r3`, CP1.
+The owner replied "accept cp1" on 2026-10-29. Please review the
+[owner's acceptance handoff](INBOX.md#owner-acceptance-of-cp1), record the verdict
+in the spec package and update its checkpoint table on
+`workshop/l-evaluation-records`. This acceptance is not evidence that the
+prototype meets the spec or has passed a walkthrough.
