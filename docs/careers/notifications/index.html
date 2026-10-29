@@ -6587,7 +6587,6 @@
     <div class="u-fixed-width">
       <div class="p-breadcrumbs" aria-label="Breadcrumbs">
         <ol class="p-breadcrumbs__items p-text--x-small-capitalised">
-          <li class="p-breadcrumbs__item"><a href="../../index.html">Canonical</a></li>
           <li class="p-breadcrumbs__item"><a href="../index.html">Careers</a></li>
           <li class="p-breadcrumbs__item">Notifications</li>
         </ol>
@@ -6603,153 +6602,43 @@
       <div class="col">
         <div class="u-sv3">
           <h1 class="p-heading--2">Notifications</h1>
-          <p>Signed in as <strong>Alex Morgan</strong> &middot; alex.morgan@example.com. Updates about jobs at Canonical, based on your profile, saved searches and applications.</p>
+          <p>Signed in as <strong id="notif-name"></strong> &middot; <span id="notif-who"></span></p>
+        </div>
+        <div class="p-notification--information is-borderless" style="margin-top:0">
+          <div class="p-notification__content">
+            <p class="p-notification__message"><strong>Demo only:</strong> switch who is signed in to see how the same centre changes. This control is not part of the product.</p>
+            <div class="p-segmented-control">
+              <div class="p-segmented-control__list" role="tablist" aria-label="Demo persona" id="persona-switch">
+                <button class="p-segmented-control__button" role="tab" data-persona="alex">Alex &middot; Jobseeker</button>
+                <button class="p-segmented-control__button" role="tab" data-persona="priya">Priya &middot; Hiring manager</button>
+                <button class="p-segmented-control__button" role="tab" data-persona="sam">Sam &middot; Recruiter</button>
+              </div>
+            </div>
+            <p class="p-text--small"><button class="p-button--link" id="notif-reset" type="button">Reset demo state</button></p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="p-section--shallow">
+  <section class="p-section--shallow" id="notif-app">
     <div class="row--25-75-on-large">
       <div class="col">
         <p class="p-heading--5">Filter</p>
         <div class="p-segmented-control" style="max-width:100%">
-          <div class="p-segmented-control__list" role="tablist" aria-label="Notification filter" id="notif-filters" style="flex-wrap:wrap">
-            <button class="p-segmented-control__button" role="tab" aria-selected="true" data-filter="all">All</button>
-            <button class="p-segmented-control__button" role="tab" aria-selected="false" data-filter="unread">Unread</button>
-            <button class="p-segmented-control__button" role="tab" aria-selected="false" data-filter="match">Matches</button>
-            <button class="p-segmented-control__button" role="tab" aria-selected="false" data-filter="application">Applications</button>
-            <button class="p-segmented-control__button" role="tab" aria-selected="false" data-filter="saved">Saved searches</button>
-            <button class="p-segmented-control__button" role="tab" aria-selected="false" data-filter="reminder">Reminders</button>
-          </div>
+          <div class="p-segmented-control__list" role="tablist" aria-label="Notification filter" id="notif-filters" style="flex-wrap:wrap"></div>
         </div>
         <hr class="p-rule--muted" />
-        <p class="p-text--small u-text--muted"><span id="notif-count">0</span> shown &middot; <span id="notif-unread">0</span> unread</p>
-        <button class="p-button--base" id="notif-mark-all">Mark all as read</button>
+        <p class="p-text--small u-text--muted"><span id="notif-count">0</span> shown &middot; <span id="notif-unread">0</span> unread &middot; <span id="notif-needs">0</span> need action</p>
+        <button class="p-button--base" id="notif-mark-all" type="button">Mark all as read</button>
+        <p class="p-text--small u-text--muted">Marking as read never completes a task.</p>
       </div>
       <div class="col">
-        <ul class="p-list--divided" id="notif-list">
-          <li class="p-list__item" data-type="match" data-unread="true">
-            <div class="p-notification--information is-borderless"><div class="p-notification__content">
-              <h3 class="p-notification__title">7 new job postings match your skills</h3>
-              <p class="p-notification__message">Based on your profile: Python, Kubernetes, Linux. <a href="../all/index.html">View all &rsaquo;</a></p>
-              <p class="p-text--small u-text--muted">Today, 9:12 AM &middot; Matches</p>
-            </div></div>
-          </li>
-          <li class="p-list__item" data-type="application" data-unread="true">
-            <div class="p-notification--positive is-borderless"><div class="p-notification__content">
-              <h3 class="p-notification__title">Your application moved to interview</h3>
-              <p class="p-notification__message">Senior Software Engineer, Ubuntu Foundations: the hiring team would like to schedule a first call. <a href="../hiring-process/index.html">What to expect &rsaquo;</a></p>
-              <p class="p-text--small u-text--muted">Today, 8:03 AM &middot; Applications</p>
-            </div></div>
-          </li>
-          <li class="p-list__item" data-type="reminder" data-unread="true">
-            <div class="p-notification--caution is-borderless"><div class="p-notification__content">
-              <h3 class="p-notification__title">Complete your application</h3>
-              <p class="p-notification__message">Your draft for Cloud Solutions Architect closes in 3 days. <a href="../application/faq/index.html">Application FAQ &rsaquo;</a></p>
-              <p class="p-text--small u-text--muted">Yesterday, 5:40 PM &middot; Reminders</p>
-            </div></div>
-          </li>
-          <li class="p-list__item" data-type="saved" data-unread="true">
-            <div class="p-notification--information is-borderless"><div class="p-notification__content">
-              <h3 class="p-notification__title">3 new roles for your saved search &ldquo;Engineering &middot; Remote&rdquo;</h3>
-              <p class="p-notification__message"><a href="../engineering/index.html">Browse Engineering roles &rsaquo;</a></p>
-              <p class="p-text--small u-text--muted">Yesterday, 11:15 AM &middot; Saved searches</p>
-            </div></div>
-          </li>
-          <li class="p-list__item" data-type="application" data-unread="false">
-            <div class="p-notification--positive is-borderless"><div class="p-notification__content">
-              <h3 class="p-notification__title">Application received</h3>
-              <p class="p-notification__message">We received your application for Senior Software Engineer, Ubuntu Foundations. Our team reviews every application.</p>
-              <p class="p-text--small u-text--muted">Mon, 12 Oct &middot; Applications</p>
-            </div></div>
-          </li>
-          <li class="p-list__item" data-type="match" data-unread="false">
-            <div class="p-notification--information is-borderless"><div class="p-notification__content">
-              <h3 class="p-notification__title">New role: Web Engineer, Design Systems</h3>
-              <p class="p-notification__message">Matches your interest in front-end and design systems. <a href="../web-and-design/index.html">Web and design roles &rsaquo;</a></p>
-              <p class="p-text--small u-text--muted">Fri, 9 Oct &middot; Matches</p>
-            </div></div>
-          </li>
-          <li class="p-list__item" data-type="reminder" data-unread="false">
-            <div class="p-notification--caution is-borderless"><div class="p-notification__content">
-              <h3 class="p-notification__title">Update your profile</h3>
-              <p class="p-notification__message">Add your latest projects and skills to improve your job matches.</p>
-              <p class="p-text--small u-text--muted">Wed, 7 Oct &middot; Reminders</p>
-            </div></div>
-          </li>
-          <li class="p-list__item" data-type="saved" data-unread="false">
-            <div class="p-notification--information is-borderless"><div class="p-notification__content">
-              <h3 class="p-notification__title">2 new roles for your saved search &ldquo;Product&rdquo;</h3>
-              <p class="p-notification__message"><a href="../product/index.html">Browse Product roles &rsaquo;</a></p>
-              <p class="p-text--small u-text--muted">Mon, 5 Oct &middot; Saved searches</p>
-            </div></div>
-          </li>
-          <li class="p-list__item" data-type="application" data-unread="false">
-            <div class="p-notification--negative is-borderless"><div class="p-notification__content">
-              <h3 class="p-notification__title">Application closed: Marketing Manager</h3>
-              <p class="p-notification__message">This role has been filled. Thank you for applying &mdash; see similar roles. <a href="../marketing/index.html">Marketing roles &rsaquo;</a></p>
-              <p class="p-text--small u-text--muted">Thu, 1 Oct &middot; Applications</p>
-            </div></div>
-          </li>
-          <li class="p-list__item" data-type="match" data-unread="false">
-            <div class="p-notification--information is-borderless"><div class="p-notification__content">
-              <h3 class="p-notification__title">5 new job postings match your skills</h3>
-              <p class="p-notification__message"><a href="../all/index.html">View all &rsaquo;</a></p>
-              <p class="p-text--small u-text--muted">Tue, 29 Sep &middot; Matches</p>
-            </div></div>
-          </li>
-          <li class="p-list__item" data-type="reminder" data-unread="false">
-            <div class="p-notification--information is-borderless"><div class="p-notification__content">
-              <h3 class="p-notification__title">Explore early careers</h3>
-              <p class="p-notification__message">Graduate and early-career programmes are open. <a href="../early-careers/index.html">Learn more &rsaquo;</a></p>
-              <p class="p-text--small u-text--muted">Fri, 25 Sep &middot; Reminders</p>
-            </div></div>
-          </li>
-        </ul>
+        <ul class="p-list--divided" id="notif-list"></ul>
         <p id="notif-empty" class="u-hide">No notifications in this view.</p>
       </div>
     </div>
   </section>
-
-  <script>
-    (function () {
-      var list = document.getElementById('notif-list');
-      var items = Array.prototype.slice.call(list.children);
-      var filter = 'all';
-      function render() {
-        var shown = 0, unread = 0;
-        items.forEach(function (li) {
-          var isUnread = li.dataset.unread === 'true';
-          if (isUnread) unread++;
-          var show = filter === 'all' || (filter === 'unread' ? isUnread : li.dataset.type === filter);
-          li.classList.toggle('u-hide', !show);
-          li.style.borderLeft = isUnread ? '4px solid #0e8420' : '';
-          li.style.paddingLeft = isUnread ? '0.5rem' : '';
-          if (show) shown++;
-        });
-        document.getElementById('notif-count').textContent = shown;
-        document.getElementById('notif-unread').textContent = unread;
-        document.getElementById('notif-empty').classList.toggle('u-hide', shown > 0);
-        var badge = document.querySelectorAll('.js-notif-badge');
-        badge.forEach(function (b) { b.textContent = unread; b.style.display = unread ? '' : 'none'; });
-      }
-      document.getElementById('notif-filters').addEventListener('click', function (e) {
-        var b = e.target.closest('button'); if (!b) return;
-        filter = b.dataset.filter;
-        this.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-selected', x === b); });
-        render();
-      });
-      list.addEventListener('click', function (e) {
-        var li = e.target.closest('li'); if (li) { li.dataset.unread = 'false'; render(); }
-      });
-      document.getElementById('notif-mark-all').addEventListener('click', function () {
-        items.forEach(function (li) { li.dataset.unread = 'false'; }); render();
-      });
-      render();
-    })();
-  </script>
-
           </div>
 
             <footer class="p-footer l-footer--sticky is-dark" data-nosnippet>
@@ -7131,6 +7020,7 @@
             }
           </script>
 
-        </body>
+        <script defer src="../../careers/app/notifications.js"></script>
+</body>
 
       </html>
