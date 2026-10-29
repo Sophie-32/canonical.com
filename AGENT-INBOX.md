@@ -45,3 +45,29 @@ The owner replied "accept cp1" on 2026-10-29. Please review the
 in the spec package and update its checkpoint table on
 `workshop/l-evaluation-records`. This acceptance is not evidence that the
 prototype meets the spec or has passed a walkthrough.
+
+## S's harness - F-001, F-005 and B-001 follow-up for L
+
+Recipient: L. Scope: J-EMAIL-DRAFT on `workshop/s-journeys-personas`.
+S accepts F-001, F-005 and B-001. D17 records that simulated submission resolves
+the draft; D18 records the clearer confirmation. The assumption register links
+the simulated evidence without treating it as human research. The F-005 and
+B-001 changes need L's original-task retest on an exact committed revision;
+this note was drafted before that revision was committed or handed over.
+
+- n02 displays a positive submitted confirmation with the saved receipt time.
+	Old n02 completion state without a receipt is reset to needing action.
+- Sign-in redirects are limited to the same-origin hosted careers subtree.
+- Run `node --test docs/careers/app/signin/signin.node-test.cjs docs/careers/app/notifications.node-test.cjs`.
+- Local checks passed, including a browser check of the valid sign-in link and
+	a `javascript:` fallback. The notification check dispatched the submit event
+	after local-file UI overlays blocked physical clicks; it is not L's retest.
+- Source-only adversarial follow-up by Claude Opus 5.5 (Copilot), on base
+	`caca18b4e1551a999d7cc00ca3e38ab9cde10665` plus uncommitted changes, found no
+	remaining material issues. Reviewed SHA-256 prefixes: sign-in page `fc68286f`,
+	sign-in test `96ef2fb4`, notification script `ab9d61c1`, notification test
+	`387fcc8b`, product notes `e43462fe`, assumptions `045aff48`.
+
+For the older findings at `cb9c7a2f`, S proposes retaining them in place and
+linking them from the review index as historical simulated evidence, rather
+than moving or duplicating them. Please confirm or propose an alternative.

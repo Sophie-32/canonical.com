@@ -2,7 +2,12 @@
 <link rel="stylesheet" href="../../../static/css/styles.css"></head><body><main class="p-strip"><div class="row"><div class="col-8"><p class="p-heading--5">Simulated sign-in · no real authentication</p><h1 class="p-heading--2">Sign in to continue</h1>
 <p>You are going to: <strong>Complete application, Cloud Solutions Architect (REQ-CSA-02)</strong>.</p>
 <p><button class="p-button--positive" id="go">Continue as Alex Morgan (simulated)</button></p></div></div></main>
-<script>var K="careers-notif-v1";var next=new URLSearchParams(location.search).get("next")||"../../notifications/index.html";
-function go(){var s={};try{s=JSON.parse(localStorage.getItem(K))||{}}catch(e){}s.persona="alex";s.signedIn=true;localStorage.setItem(K,JSON.stringify(s));location.replace(next)}
+<script>var K="careers-notif-v1";
+function safeNext(){var match=location.pathname.match(/^(.*\/careers\/)app\/signin(?:\/index\.html|\/)?$/);if(!match)return null;
+var base=new URL(match[1],location.href),fallback=new URL("notifications/index.html",base).href,value=new URLSearchParams(location.search).get("next");
+if(!value||/^[a-z][a-z0-9+.-]*:/i.test(value.trim()))return fallback;
+try{var target=new URL(value,new URL("app/signin/",base));return target.origin===base.origin&&target.protocol===base.protocol&&target.host===base.host&&target.pathname.indexOf(base.pathname)===0&&!/%(?:2f|5c|25)|;/i.test(target.pathname)?target.href:fallback}catch(e){return fallback}}
+var next=safeNext();
+function go(){var s={};try{s=JSON.parse(localStorage.getItem(K))||{}}catch(e){}s.persona="alex";s.signedIn=true;localStorage.setItem(K,JSON.stringify(s));if(next)location.replace(next)}
 var cur={};try{cur=JSON.parse(localStorage.getItem(K))||{}}catch(e){}
-if(cur.signedIn&&cur.persona==="alex")location.replace(next);document.getElementById("go").onclick=go;</script></body></html>
+if(cur.signedIn&&cur.persona==="alex"&&next)location.replace(next);document.getElementById("go").onclick=go;</script></body></html>
