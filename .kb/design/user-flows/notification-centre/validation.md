@@ -63,6 +63,9 @@ Agent C's anxious, deadline-driven profile maps best to the costliest cases (2, 
 
 ## Output
 
+First run: [RUN-001](../../../../specs/001-notification-centre/reviews/RUN-001.md)
+(agent C's draft scenario, three model families; F-001 proposed for fix).
+
 Use one durable run record per independent walkthrough under
 [`specs/001-notification-centre/reviews/`](../../../../specs/001-notification-centre/reviews/README.md),
 using its template and findings index. This supersedes the original proposed

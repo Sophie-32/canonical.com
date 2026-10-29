@@ -2,8 +2,8 @@
 
 Created 2026-10-29. This file records choices and their reasons; the
 [spec](spec.md) records intended behaviour and the [reviews](reviews/README.md)
-record evidence. Git preserves revisions. No walkthrough is recorded in this
-package. Product/design decisions have their authoritative home in the colleague's
+record evidence. Git preserves revisions. Walkthrough evidence starts at
+[RUN-001](reviews/RUN-001.md). Product/design decisions have their authoritative home in the colleague's
 [product notes](../../.kb/design/product.md); this record owns workshop process
 choices and links proposed product changes to that source. D-002 and D-003 were
 drafted before the colleague's implementation was pulled and remain proposals,

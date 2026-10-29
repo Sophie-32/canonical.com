@@ -1,7 +1,7 @@
 # Journey-review protocol and evidence index
 
-**Status**: foundation protocol ready for participant sessions; no walkthrough
-results are recorded in this package. Execution is workshop scope, not deferred work.
+**Status**: protocol in use; [RUN-001](RUN-001.md) recorded (simulated reviews).
+Execution is workshop scope, not deferred work.
 Related: [spec](../spec.md), [decisions](../decisions.md), [CP1](CP1-request.md).
 Start with the [workshop ownership/handoff](../../../docs/workshop.md) and
 [imported baseline](baseline.md).
@@ -80,10 +80,12 @@ are conventions, not evidence that a run has occurred.
 
 ## Findings index
 
-No findings recorded. Add rows after observed runs:
-
 | Finding | Run/persona/revision | Evidence | Severity | Disposition and reason | Decision | Fix spec/bug | Change | Retest |
 |---|---|---|---|---|---|---|---|---|
+| [F-001](RUN-001.md#f-001-complete-application-can-be-marked-done-while-the-draft-remains-unsubmitted) | RUN-001a/b/c, Alex, `4e067fa6` | 3/3 simulated runs; L reproduction with screenshots | Major | Proposed accept: false completion on a deadline task | Pending S triage | [FIX-001](FIX-001-draft-submission.md) (draft) | None | Not run |
+| [F-002](RUN-001.md#f-002-gemini-reported-badge-1-and-action-required-label-not-reproduced) | RUN-001c | Not reproduced | n/a | Proposed reject: reviewer perception error | Pending S triage | n/a | n/a | n/a |
+| [F-003](RUN-001.md#f-003-demo-only-footer-visible-on-the-jobseeker-destination) | RUN-001a/b/c | Observed | Minor | Proposed defer: prototype scaffolding; FIX-001 covers n02 | Pending S triage | Linked to FIX-001 | n/a | n/a |
+| [F-004](RUN-001.md#f-004-501-on-cookie-preference-post) | RUN-001a | Console only | n/a | Proposed reject: static-server limitation | Pending S triage | n/a | n/a | n/a |
 
 ## Completion rule
 

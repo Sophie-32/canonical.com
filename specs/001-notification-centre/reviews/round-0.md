@@ -1,6 +1,7 @@
 # Round 0: L evaluates the existing centre while S develops journeys
 
-**Owner**: L. **State**: ready to start; no model walkthrough results recorded.
+**Owner**: L. **State**: [RUN-001](RUN-001.md) recorded: workshop override to one
+jobseeker task (Alex, unfinished draft) across three model families. Priya/Sam probes not run.
 **Pinned baseline**: `4e067fa6ecfc073263890ef7a029674cc3c4f917`.
 **Source**: S's `notification-centre` branch when fetched on 2026-10-29.
 Its `docs/careers` and `docs/static` files are byte-identical in Git to the

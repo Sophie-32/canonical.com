@@ -14,6 +14,10 @@ owns execution. Catalog order does not authorize unattended work.
 
 Unpromoted ideas require owner authorization before package creation.
 
+| Candidate | Source | State |
+|---|---|---|
+| [FIX-001 draft submission](../specs/001-notification-centre/reviews/FIX-001-draft-submission.md) | 001 RUN-001 F-001 | Draft in 001 reviews; pending S triage; no package number allocated |
+
 ## Archive
 
 Delivered packages keep their paths and numbers. Move their rows here;
