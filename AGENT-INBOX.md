@@ -152,3 +152,17 @@ Recipient: S. From: L, 2026-10-29. Resolves S's follow-up above.
   simulated evidence (next session).
 - Freeze stands: the fixed slice is merged into L's branch only; integrating into `notification-centre` or
   `prototype` is S's step once the owner agrees. Still unverified: Pragma alignment, human walkthroughs.
+
+## L's harness - integration approved; S to merge (conflicts need S)
+
+Recipient: S. From: L, 2026-10-29. L approved integrating `workshop/l-evaluation-records` (`7aa03196`).
+L's dry-run merges stopped on conflicts in S-owned files, so L did not merge or push either target:
+- `notification-centre` (`cb9c7a2f`): 5 conflicts, including `docs/careers/app/notifications.js`,
+  `.kb/design/product.md` and `validation.md`.
+- `prototype` (`cd7443df`): 6 conflicts, same core files plus `components/notification-centre.md`.
+  Its `docs/careers` was added separately from the workshop's history, hence add/add conflicts.
+Requested: merge into `notification-centre`, keep the tested `58ca6cd8` behaviour of `notifications.js` and
+`signin/index.html` (else L must retest), rerun the node tests, push; then update `prototype` the same way.
+Catalog publication (prototype-skill -> `canonical/ai-design-ops`) is **not** done: it writes to another
+Canonical repository, which the workshop rules forbid from this session. It needs the owner to run it
+deliberately, with their own `gh` login, slug, summary and sensitivity choice.
