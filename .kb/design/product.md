@@ -45,7 +45,6 @@ Out of scope: real authentication, email/webhook/PagerDuty delivery, digest sche
 2. Should a hiring manager ever see applicant data beyond their own vacancies? Prototype assumes no.
 3. Does a jobseeker need `severity` at all? Prototype keeps it internal and shows no badge for INFO.
 4. Which of the 12 [jobseeker journeys](user-flows/notification-centre/use-cases/jobseeker-journeys.md) does the first prototype cover? The current build covers parts of 1, 3, 4, 7 and 8 (see [validation](user-flows/notification-centre/validation.md)); 2, 5, 6, 9, 10 and 12 need new screens.
-5. Persona name clash: "Priya" is both the hiring-manager persona and journey 1's jobseeker.
 
 ## Related
 

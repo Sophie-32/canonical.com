@@ -1,6 +1,6 @@
 # Jobseeker journeys (12)
 
-Fictional jobseekers used to test the notification centre. Names are placeholders; note that "Priya" also names the hiring-manager persona in [hiring-manager.md](hiring-manager.md), so rename one before user testing. Failure modes behind each journey are in [edge-cases](../edge-cases.md).
+Fictional jobseekers used to test the notification centre. Names are placeholders; the journey-1 jobseeker is "Peter" so it does not clash with the hiring-manager persona Priya in [hiring-manager.md](hiring-manager.md). Failure modes behind each journey are in [edge-cases](../edge-cases.md).
 
 ## Coverage grid
 
@@ -15,7 +15,7 @@ Two axes: **prompted** (email or push brought them in) vs **self-initiated**; **
 
 | # | Who | Trigger and path | Needs |
 | :-- | :-- | :-- | :-- |
-| 1 | **The anxious waiter**: Priya applied to a PM role two weeks ago, no news | Logs in unprompted, scans the centre, sees only "Application received" from 14 days ago, clicks into the application | Clear current status and a sense the process is moving; an empty or stale feed reads as ghosting |
+| 1 | **The anxious waiter**: Peter applied to a PM role two weeks ago, no news | Logs in unprompted, scans the centre, sees only "Application received" from 14 days ago, clicks into the application | Clear current status and a sense the process is moving; an empty or stale feed reads as ghosting |
 | 2 | **The interview scheduler**: Marcus | Email "Action required: schedule your interview"; taps on phone at lunch, bounced to login, lands on home instead of the task; finds the item in the centre and picks a slot in an embedded scheduler | Deep links that survive login; mobile-friendly flow; booking confirmation and calendar invite |
 | 3 | **The multi-applicant**: Dana applied to four roles (two engineering, another city, one by referral) | Gets "Your application has been updated" and can't tell which | Grouping by application; title, location and req ID in every item |
 | 4 | **The rejected candidate**: Leo | Receives "Thank you for your interest"; looks for feedback, reapply rules and similar roles; adjusts alerts | Respectful, final-feeling message; "you can reapply after X"; path to related openings, not a jarring "jobs you might like!" |
