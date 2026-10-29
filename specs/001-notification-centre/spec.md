@@ -1,9 +1,9 @@
 # Feature specification: Careers notification centre MVP
 
-**Feature branch**: `workshop/evidence-foundations`
+**Feature branch**: `workshop/l-evaluation-records`
 **Created**: 2026-10-29
 **Lifecycle**: draft
-**Scope**: `001-notification-centre/spec-r2`
+**Scope**: `001-notification-centre/spec-r3`
 **Superseded tasks**: none.
 
 <a id="checkpoints"></a>
@@ -14,12 +14,16 @@
 | CP1 | Owner specification acceptance | [request](reviews/CP1-request.md) | pending |
 
 **Input**: Iterate on the notification-centre prototype in Sophie-32's fork.
-A logged-in jobseeker, hiring manager or recruiter starts on the careers page,
-clicks a notification, reaches the centre and understands the next step.
+A jobseeker, hiring manager or recruiter arrives from an explicitly defined
+entry context, understands the relevant update and reaches the right next step.
+The original careers-page -> centre path is one journey alongside email,
+LinkedIn and direct job-link arrivals; identity/session must be stated for each.
 Independent Gemini, Claude and GPT walkthroughs, launched through the owner's
 Copilot harness, seed evidence-backed iterations and a durable record of decisions.
 The current session establishes foundations; the participant sessions own journey
 development and review execution under the [workshop split](../../docs/workshop.md).
+S owns personas, assumptions and journeys on `workshop/s-journeys-personas`;
+L owns this evaluation/specification package on `workshop/l-evaluation-records`.
 
 ## Purpose and scope
 
@@ -40,12 +44,24 @@ in the implementation plan.
 Included: careers-page entry, notification centre, role-appropriate examples,
 message details, linked destination previews, unread state, empty/unavailable
 states, accessible navigation, and repeatable demo reset.
+S's [assumption register](../../.kb/design/assumptions.md) and
+[entry-context seeds](../../.kb/design/user-flows/notification-centre/entry-contexts.md)
+define the source messages, subjects and expected destinations to flesh out
+before selecting review tasks. These are explicit hypotheses, not inferred user research.
 
 Excluded: production authentication/authorization, live recruitment records,
-email or push delivery, routing infrastructure, admin audit dashboards, automated
+real email or push delivery, routing infrastructure, admin audit dashboards, automated
 hiring decisions, and a cross-product notification platform.
+Synthetic email/post artifacts and links may model those entry contexts without
+sending messages, accessing real accounts or claiming an existing implementation.
 
 ## User scenarios and testing
+
+For each selected journey S supplies its J-/A-IDs, persona/lifecycle, source
+message or link, subject/event/notification references, initial session and landing
+destination. L derives neutral review tasks from that handoff. The scenarios
+below describe the original centre flow; external entry scenarios must preserve
+their own destination contract and must not automatically detour through it.
 
 ### User story 1 - Understand an application update (Priority: P1)
 
@@ -122,6 +138,9 @@ fixtures using keyboard navigation and a narrow viewport.
   refresh work for the supported prototype URLs.
 - A signed-out demo state shows no personal notification count or messages.
 - Long titles and narrow screens retain readable content and usable actions.
+- An email opened in a fresh session, forwarded link or closed job must preserve
+  subject context and explain any identity/unavailable boundary. The appropriate
+  simulated behaviour is selected through S's assumption/journey work.
 
 ## Requirements
 
@@ -168,10 +187,24 @@ fixtures using keyboard navigation and a narrow viewport.
   MUST retain their rationale. No observations or successful reviews may be invented.
 - **FR-014**: Source publication MUST target only
   `https://github.com/Sophie-32/canonical.com`; Canonical upstream pushes are prohibited.
+- **FR-015**: Every selected inbound journey MUST record its source email/post/link,
+  persona/session, subject/event, related notification if one exists, intended
+  landing and next-action destination. S MUST identify the source artifacts and
+  map design IDs to prototype fixtures/routes before L claims that journey was reviewed.
+- **FR-016**: Where email and in-app notifications refer to the same event, their
+  synthetic artifacts MUST identify the same subject and explain any changed
+  destination state. A visit or external link alone MUST NOT establish verified
+  identity or an application history. Unresolved channel/read-state rules stay
+  explicit assumptions until a product decision is recorded.
 
 ### Key entities
 
 - **Demo identity**: stable person ID, role and allowed application/vacancy relationships.
+- **Entry context**: journey and assumption IDs, entry channel, initial identity/session,
+  user intent and expected first landing.
+- **Source communication**: synthetic email/post or direct-link artifact referring
+  to a job/application/search/task and optional shared event; linked to the related
+  notification and destination without requiring a personal notification for every visit.
 - **Notification**: stable ID, event type, title, body, timestamp, subject, intended
   recipients, optional primary action and shared task state.
 - **Recipient state**: notification plus person and read timestamp; separate from
@@ -196,6 +229,9 @@ fixtures using keyboard navigation and a narrow viewport.
 - **SC-005**: Every finding has evidence and a disposition; every claimed fix has
   a linked verification against the original task. No unresolved blocking finding
   is labelled passed. Representative human walkthroughs remain separately reported.
+- **SC-006**: Every selected email/LinkedIn/direct-link review is traceable to
+  S's source artifact, assumption, subject and destination mapping. Its result
+  distinguishes observed behaviour from an unimplemented scenario or a design hypothesis.
 
 These are targets, not completed validation results. Agent walkthroughs provide
 simulated evaluation and cannot alone establish usability for real people.
@@ -203,6 +239,11 @@ Review execution is part of the participant workshop scope, not a deferred-work
 backlog or a missing foundation deliverable.
 
 ## Assumptions and decisions to confirm
+
+The maintained register is [entry assumptions](../../.kb/design/assumptions.md),
+owned by S. L links supporting/contradicting findings and requests register
+updates rather than creating a competing assumption list. The scope defaults
+below remain part of this acceptance proposal.
 
 - The initial surface is careers, not every Canonical site or an enterprise admin portal.
 - Simulated identity and synthetic data are sufficient for this iteration.

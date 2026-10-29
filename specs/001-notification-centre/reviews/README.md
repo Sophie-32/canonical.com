@@ -5,6 +5,9 @@ results are recorded in this package. Execution is workshop scope, not deferred 
 Related: [spec](../spec.md), [decisions](../decisions.md), [CP1](CP1-request.md).
 Start with the [workshop ownership/handoff](../../../docs/workshop.md) and
 [imported baseline](baseline.md).
+S supplies the [assumptions](../../../.kb/design/assumptions.md) and
+[entry-context mapping](../../../.kb/design/user-flows/notification-centre/entry-contexts.md);
+L owns execution/evidence. Start with [L's brief](../../../docs/handoffs/L.md).
 
 ## Review matrix
 
@@ -20,8 +23,12 @@ explicit, and unavailable combinations must be reported honestly.
 
 ## Neutral task prompts
 
-Start each run on the careers page in its assigned fixture, without hints about
-where controls are or how the UI should work:
+Start each run at the selected journey's entry surface in its assigned fixture,
+without hints about control locations or the intended route. The prompts below
+are careers-entry examples. For an email/post journey, provide S's visible source
+artifact and a task such as "Follow up on this update and find out what you need
+to do next." For a direct job link, use the supplied job link and its stated goal.
+Do not force a centre visit if the message promises a job/application destination.
 
 - Jobseeker: "You applied for the software engineer role. Find out what changed
   in your application and what, if anything, you need to do next."
@@ -33,7 +40,9 @@ where controls are or how the UI should work:
 ## Procedure
 
 1. Pin the tested commit/version and served URL; record viewport, fixture/reset
-   version, identity and actual model/tool versions. Reset personal and shared
+   version, J-/A-IDs, source artifact, intended subject, initial session,
+   identity and actual model/tool versions. Map implemented IDs/routes from S's
+   handoff; unimplemented entry scenarios are not completed reviews. Reset personal and shared
    state before each independent run. Use an isolated browser profile/context per
    simultaneous reviewer: the prototype stores state in `localStorage` and its
    reset control retains the selected persona.
@@ -56,6 +65,9 @@ where controls are or how the UI should work:
 7. For accepted work, link original finding -> decision -> fix spec/bug ->
    implementation revision -> repeat of original task -> outcome. Retest affected
    personas and keep failures open. A new version starts a new run record.
+8. Link supporting/contradicting evidence to the assumption and ask S to update
+   its status. Retain the source message, expected destination and subject mapping
+   so an email-to-page mismatch remains reproducible after the UI changes.
 
 Record adopted product choices in [the product log](../../../.kb/design/product.md)
 and link to them from findings; the package decision record owns process choices

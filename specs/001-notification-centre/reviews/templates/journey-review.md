@@ -8,6 +8,10 @@ Copy this file for an actual run. It is not a completed review.
 - Browser/tool capabilities and limitations:
 - Prototype commit/version and served URL:
 - Fixture/reset version and active persona:
+- S's journey IDs / assumption IDs:
+- Entry channel and visible source email/post/direct-link artifact:
+- Initial identity/session; subject/event/notification mapping:
+- Intended landing and next-action target from S's handoff (review owner only):
 - Viewport / input method:
 - Neutral task prompt:
 - Assistance/interventions:
@@ -32,6 +36,7 @@ is a valid result. A tool limitation is not automatically a product defect.
 - Disposition and decision-maker/date:
 - Rationale and alternatives:
 - Decision record:
+- Assumption evidence/status update requested from S:
 - Accepted fix specification or scoped bug record:
 
 ## Verification

@@ -106,6 +106,26 @@ is configured for fetch/push. This supersedes D-001's original remote naming.
 The foundation session records preparation as complete; actual workshop journeys
 belong to the participant sessions and are not deferred-work tickets.
 
+## D-007 - Establish entry assumptions and name S/L branch ownership
+
+**Status**: owner instruction. **Date**: 2026-10-29.
+**Choice**: S owns personas, entry-context assumptions, journeys and experience
+on `workshop/s-journeys-personas`. L owns the remaining workflow, acceptance/fix
+specifications, model review orchestration and evidence on `workshop/l-evaluation-records`.
+Seed an [assumption register](../../.kb/design/assumptions.md) and
+[source-message/subject/destination map](../../.kb/design/user-flows/notification-centre/entry-contexts.md).
+**Reason**: The owner requested email, LinkedIn and direct-job arrivals before
+evaluating the centre. These contexts explain what the person knows and which
+job/application/page a notification refers to; a careers-home-only task misses them.
+**Alternative**: Assume every person starts signed in on careers home and force
+all source links through the centre without examining their destination promise.
+**Consequence**: Both branches share these foundations, assumption IDs connect
+through review and retest, S receives a concrete [agent brief](../../docs/handoffs/S.md),
+and L receives a separate [evaluation brief](../../docs/handoffs/L.md). Hypotheses
+are labelled proposed and are not represented as validated user behaviour.
+D-007 supersedes D-006's provisional participant branch allocation; the original
+foundation and colleague implementation branches remain separate.
+
 ## Adding a decision
 
 Record a stable ID, date, status/decision-maker, question, evidence links,

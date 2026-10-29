@@ -20,6 +20,11 @@ notes. The spec package owns the acceptance proposal, workshop process decisions
 and review evidence; link adopted choices to the product log rather than creating
 a competing product-decision history. The active workshop baseline is the fork's
 `origin/notification-centre`, configured as `targetBranch`; `main` lacks the prototype.
+S owns the experience, [entry assumptions](../.kb/design/assumptions.md) and
+journey mapping on `workshop/s-journeys-personas`; L owns the remaining workflow
+and this spec/evidence package on `workshop/l-evaluation-records`. Start with the
+appropriate [S](handoffs/S.md) or [L](handoffs/L.md) brief. Model tasks must carry
+the scenario/assumption and source-artifact references from S's handoff.
 
 A review finding is a proposal until triaged. Record whether it is accepted,
 deferred, rejected, or duplicated, with a reason and links to any resulting spec.

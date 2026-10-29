@@ -1,6 +1,11 @@
 # User flow: careers notification centre
 
-Entry points: global nav bell (every careers page); deep links from email in a future version.
+Existing entry: global nav bell on careers pages. S's workshop journey scope
+also covers email, LinkedIn and direct job-link arrivals under the
+[assumption register](../../assumptions.md) and [entry-context seeds](entry-contexts.md).
+These are scenario inputs; they do not claim those entry surfaces are implemented.
+Start with the source message/job and expected landing, then decide how the
+related notification and centre fit. L consumes the mapped journey for evaluation.
 
 ## Journey (all personas)
 

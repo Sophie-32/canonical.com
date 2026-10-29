@@ -1,6 +1,9 @@
 # Current work
 
 **Next tasks**: Foundation handoff using [the two-person agreement](../../docs/workshop.md).
+S starts from [the S brief](../../docs/handoffs/S.md) on
+`workshop/s-journeys-personas`; L uses [the L brief](../../docs/handoffs/L.md) on
+`workshop/l-evaluation-records`.
 Participant sessions own journey development and Copilot walkthrough execution;
 those are workshop scope, not deferred-work tickets in this foundation session.
 **Blockers**: none for foundation scope. CP1 remains the product-specification
@@ -19,6 +22,9 @@ acceptance checkpoint and does not retroactively gate the imported prototype.
 - [x] T006 Make the fork the sole `origin` remote and create the evidence-foundation branch.
 - [x] T007 Record file ownership, review handoff, Copilot execution and the imported baseline.
 - [x] T008 Validate the combined foundation package for sharing on its separate fork branch.
+- [x] T009 Seed an explicit assumption register and source-message/subject/destination scenarios.
+- [x] T010 Assign S/L file ownership and write self-contained agent handoffs.
+- [x] T011 Validate the updated assumption/handoff package on L's declared branch.
 
 ## Known limits
 
@@ -34,6 +40,8 @@ standalone CLI availability in this checkout is not an execution blocker.
 - Combined package `wfk lint`: no errors or warnings on the declared workshop branch.
 - Local Markdown links: checked 23 foundation, spec and knowledge-base documents;
   no broken paths.
+- Assumption/S-L update: workflow lint passed without errors/warnings; local links
+  checked across 28 documents; whitespace checks passed. No UI/assets changed.
 - `git diff --check`: passed. Runtime checks were not run for documentation changes.
 - Imported UI/assets: no changes relative to `9d0155cd` under `docs/careers` or
   `docs/static`. Fork is the sole remote, named `origin`.

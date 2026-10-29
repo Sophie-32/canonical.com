@@ -11,6 +11,9 @@ remain experience-owned. This branch adds the workflow and evaluation records;
 it does not rebuild the centre or change its rendering approach.
 
 Participant sessions follow the [ownership/handoff](../../docs/workshop.md).
+S first develops the [entry assumptions](../../.kb/design/assumptions.md), personas
+and message/subject/destination journeys under [S's brief](../../docs/handoffs/S.md).
+L consumes that scenario map under [L's brief](../../docs/handoffs/L.md).
 Copilot launches independent model reviewers against an agreed immutable
 revision; the evidence lane records findings and the experience lane implements
 accepted changes. Further product changes follow the relevant owner checkpoints.

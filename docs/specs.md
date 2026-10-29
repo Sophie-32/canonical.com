@@ -8,7 +8,7 @@ owns execution. Catalog order does not authorize unattended work.
 
 | Spec | Package | Branch |
 |---|---|---|
-| [Careers notification centre MVP](../specs/001-notification-centre/spec.md) | `001-notification-centre` | `workshop/evidence-foundations` |
+| [Careers notification centre MVP](../specs/001-notification-centre/spec.md) | `001-notification-centre` | `workshop/l-evaluation-records` |
 
 ## Candidates
 

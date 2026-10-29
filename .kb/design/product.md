@@ -11,6 +11,12 @@ One notification centre on canonical.com/careers whose content depends on **who 
 
 ## Personas (fictional, switchable in the demo)
 
+S owns persona/journey development. Begin with the
+[assumption register](assumptions.md) and
+[email, LinkedIn and direct-link context seeds](user-flows/notification-centre/entry-contexts.md).
+These distinguish entry source, session/identity, source message, subject, related
+notification and the destination the person expects. L owns the linked evaluation record.
+
 | Persona | Role (schema) | Cares about |
 | :-- | :-- | :-- |
 | Alex Morgan, jobseeker | `jobseeker` | Their applications, matching vacancies, saved searches |

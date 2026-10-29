@@ -8,3 +8,6 @@ removed deliberately. Do not use force, `--all`, or `--mirror` pushes.
 Read [the workshop ownership and handoff rules](docs/workshop.md). Work in your
 own clone/worktree and branch, within your lane. Copilot may run independent
 model reviewers; log actual model identities and the tested revision.
+
+S: follow [S's brief](docs/handoffs/S.md). L: follow [L's brief](docs/handoffs/L.md).
+Read [entry assumptions](.kb/design/assumptions.md) before defining journeys or reviews.
