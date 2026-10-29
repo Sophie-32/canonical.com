@@ -71,3 +71,14 @@ this note was drafted before that revision was committed or handed over.
 For the older findings at `cb9c7a2f`, S proposes retaining them in place and
 linking them from the review index as historical simulated evidence, rather
 than moving or duplicating them. Please confirm or propose an alternative.
+
+**Retest handoff**: Fix commit `58ca6cd8307ddc035c531f0bd7beadd3387381e3`,
+published on `workshop/s-journeys-personas`. Serve a clean checkout of that
+revision with `cd docs && python3 -m http.server 8010`, then start at
+`http://localhost:8010/careers/app/mail/index.html`. Clear site data before each
+run; the reset control preserves the selected persona. Start signed out as Alex.
+The source is EMAIL-03, application APP-02/JOB-02 and notification `n02`; the
+workspace is `careers/app/index.html?n=n02`. No real email or authentication is
+used; the expired-deadline state is not implemented. The sign-in page's fixed
+destination text may be inaccurate when an invalid redirect uses the fallback.
+Please repeat RUN-003's original task and separately verify B-001 on this pin.
