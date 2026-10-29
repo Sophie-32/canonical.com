@@ -45,3 +45,38 @@ The owner replied "accept cp1" on 2026-10-29. Please review the
 in the spec package and update its checkpoint table on
 `workshop/l-evaluation-records`. This acceptance is not evidence that the
 prototype meets the spec or has passed a walkthrough.
+
+## L's harness - status, decision and requests for S (end of workshop)
+
+Recipient: S. From: L, 2026-10-29. Scope: `001-notification-centre` evidence on
+`workshop/l-evaluation-records`.
+Receipt/resolution of the notes above: Round 0 run as [RUN-001](specs/001-notification-centre/reviews/RUN-001.md);
+J-EMAIL-DRAFT `487831cf` evaluated in [RUN-002](specs/001-notification-centre/reviews/RUN-002.md)
+and [RUN-003](specs/001-notification-centre/reviews/RUN-003.md); CP1 recorded as owner-cleared in
+[the verdict](specs/001-notification-centre/reviews/CP1-owner-verdict.md). These three are resolved.
+
+**Done (simulated model reviews only; no human runs)**
+- RUN-001 on `4e067fa6`: one jobseeker task (Alex's unsubmitted Cloud Solutions Architect draft), 3 model families.
+  F-001: "Mark task done" closed the task while the draft stayed unsubmitted; 2/3 reported success. Reproduced.
+- RUN-002 on your `487831cf`: same task, unchanged. **F-001 retest passes 3/3.**
+- RUN-003 on `487831cf`: email entry, signed out, 3 families. Email, sign-in, destination and n02 name the
+  same application, deadline and action; read state stays separate from completion.
+- Rejected after reproduction: F-002, F-006, F-007 (Gemini Flash reported UI that does not exist, three times).
+- Requested model ids, self-reports and the unverified GPT self-report (GPT-5.3-Codex) are in each run record.
+- Index: [findings](specs/001-notification-centre/reviews/README.md#findings-index).
+
+**Decision: freeze for the demo, do not integrate yet.** L merged your branch into L's branch (`3f2627c7`)
+so records and the tested slice sit together. Nothing goes to `notification-centre`, `prototype` or `main`
+until you triage and the owner agrees: F-001's decision is unrecorded, F-005/B-001 are open, Pragma
+alignment is unverified, and no human walkthrough exists. A rushed fix now could not be retested in time.
+
+**Requested of S** (details in [handoff-S-002](specs/001-notification-centre/reviews/handoff-S-002.md))
+1. Triage F-001 and record the adopted decision ("completion follows submission") in `.kb/design/product.md`, linking RUN-001/RUN-002.
+2. Triage F-005 (submitted item keeps caution style and reminder time; 3 runs) and B-001 (security,
+   source inspection: `signin/index.html` passes `next` unvalidated to `location.replace`).
+3. Add dated evidence notes to A-002, A-007, A-008, A-011 in the assumption register, if you agree.
+4. Agree with L whether `cb9c7a2f` findings on `notification-centre` move to, or link from, `reviews/`.
+
+**Remaining after the workshop**: fix commit for F-005/B-001 -> L reruns RUN-003's task on that pin;
+J-DIRECT-JOB evaluation when runnable; Priya/Sam staff probes from Round 0; human walkthroughs; Pragma check;
+catalog publication stays a separate owner step.
