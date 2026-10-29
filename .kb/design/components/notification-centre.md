@@ -71,6 +71,28 @@ Read and task state are independent. Four combinations exist for actionable noti
 5. Empty state per filter.
 6. Visibility: a persona only ever receives notifications whose `audience.roles` include their role and whose `audience.scope` matches their entitlements.
 
+## Resilience requirements
+
+Derived from the [jobseeker stumbling blocks](../user-flows/notification-centre/edge-cases.md) and decision D13. Not all are built in the prototype.
+
+| Requirement | Detail |
+| :-- | :-- |
+| Job snapshot | Each application notification carries `context.snapshot`: `title`, `location`, `requisition_id`, `team`, `applied_at`. Shown even if the posting is edited, closed or deleted |
+| Current status always shown | Notification detail shows the application's current status separate from the event that triggered it; statuses are candidate-facing and never regress without an explanation |
+| Dead-end fallback | If the target is gone, show "This posting was closed on {date}. Your application status: {status}" instead of a 404 |
+| Superseded notifications | A rescheduled or cancelled event updates the old item or marks it "Replaced" |
+| De-duplication | Matches are checked against the person's applications by requisition, not job ID |
+| Grouping and archive | Group by application; archive and filter; separate application cycles |
+| Deadlines | Any `actionable` item has a `due_at`, shown in the viewer's time zone |
+| Confirmation | Completing a task shows an explicit "received" state; external tool status syncs back |
+| Secondary actions | Withdraw, contact recruiter, mute, via `remediation_options`; links to privacy and data controls |
+| Preferences | Application updates and job alerts are separate categories (D15) |
+| Deep links | Survive login (return-to destination); work on mobile |
+| Identity | Notifications follow the person across emails and accounts; guest applications can be claimed |
+| Channel sync | One read state across in-app, email and SMS |
+| Terminal outcomes | Rejection, on-hold, role moved, offer rescinded each generate a notification |
+| Privacy | After deletion, items show "This application was deleted" with personal data removed |
+
 ## Accessibility
 
 List is a `ul`; unread is conveyed in text ("Unread") as well as colour; filters are a tablist; the bell has an accessible name that includes the unread count.

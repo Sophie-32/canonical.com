@@ -44,6 +44,9 @@ Out of scope: real authentication, email/webhook/PagerDuty delivery, digest sche
 | D6 | Primary action says *where* (e.g. "Review candidate"), not *how* | Schema action guidance |
 | D7 | Persona switcher is demo scaffolding, not a design proposal | Avoids implying users switch identity |
 | D8 | Work happens on branch `notification-centre` (a `prototype/…` name collides with the existing `prototype` branch) | Git ref hierarchy |
+| D13 | **A notification stays meaningful after the thing it refers to changes.** Store a snapshot of the job (title, location, requisition ID, date applied) at application time; always show the application's current status even if the posting is gone; every dead end has a clear fallback (e.g. "This posting was closed on 3 Oct. Your application status: Not selected") | Covers most of the [stumbling blocks](user-flows/notification-centre/edge-cases.md): deleted, edited or reposted jobs, purged data, expired links |
+| D14 | Prioritise **prompted, action-required** visits when designing and testing (email or push brings the person in to do something) | Broken links and stale status there cost the candidate something real; see the [coverage grid](user-flows/notification-centre/use-cases/jobseeker-journeys.md#coverage-grid) |
+| D15 | Application updates and job alerts are separate notification categories with separate preferences | Switching off alerts must never silence application status |
 
 D8 records the original implementation branch choice. Workshop coordination now
 uses separate experience and evidence branches under the
@@ -59,7 +62,9 @@ in [the linked review package](../../specs/001-notification-centre/reviews/READM
 1. Is `event_type` allowed to extend beyond the DE100 enum for careers (we use `custom` plus a `careers_event` sub-type)?
 2. Should a hiring manager ever see applicant data beyond their own vacancies? Prototype assumes no.
 3. Does a jobseeker need `severity` at all? Prototype keeps it internal and shows no badge for INFO.
+4. Which of the 12 [jobseeker journeys](user-flows/notification-centre/use-cases/jobseeker-journeys.md) does the first prototype cover? The current build covers parts of 1, 3, 4, 7 and 8 (see [validation](user-flows/notification-centre/validation.md)); 2, 5, 6, 9, 10 and 12 need new screens.
+5. Persona name clash: "Priya" is both the hiring-manager persona and journey 1's jobseeker.
 
 ## Related
 
-[Design system notes](design.md) · [Component spec](components/notification-centre.md) · [User flow overview](user-flows/notification-centre/overview.md) · [Validation plan](user-flows/notification-centre/validation.md)
+[Design system notes](design.md) · [Component spec](components/notification-centre.md) · [User flow overview](user-flows/notification-centre/overview.md) · [Validation plan](user-flows/notification-centre/validation.md) · [Jobseeker stumbling blocks](user-flows/notification-centre/edge-cases.md) · [Jobseeker journeys](user-flows/notification-centre/use-cases/jobseeker-journeys.md)

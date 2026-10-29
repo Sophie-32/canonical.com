@@ -19,6 +19,23 @@ recruiters. Agents provide simulated evaluation; human evidence is recorded sepa
 | B: browsing seeker | No applications, saved a search | Find new matching roles |
 | C: anxious deadline-driven applicant | Has an unfinished draft | Not miss a deadline |
 
+## Journey coverage
+
+The agents draw on the [12 jobseeker journeys](use-cases/jobseeker-journeys.md). What the current build can exercise:
+
+| Journey | Covered by current build | Agent |
+| :-- | :-- | :-- |
+| 1 Anxious waiter | Partly: status shown in notification, no application page | A |
+| 3 Multi-applicant | Partly: grouping and requisition IDs not built | A |
+| 4 Rejected candidate | Partly: closed-application notification only | A |
+| 7 Passive browser | Partly: matches and saved searches; no alert preferences | B |
+| 8 Dead-end clicker | Not built (no snapshot/fallback page) | B |
+| 2, 5, 6 Prompted, action-required | Only the draft-expiring item; no scheduler, assessment or offer | C |
+| 9, 10, 12 | Not built | none |
+| 11 Accessibility | Structure only, not screen-reader tested | none |
+
+Agent C's anxious, deadline-driven profile maps best to the costliest cases (2, 5, 6), so its findings carry the most weight.
+
 ## Tasks
 
 1. Find where notifications live from the careers home page.

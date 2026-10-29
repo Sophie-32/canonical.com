@@ -23,6 +23,8 @@ related notification and centre fit. L consumes the mapped journey for evaluatio
 
 ## Edge cases
 
+The full list of jobseeker failure modes is in [edge-cases.md](edge-cases.md), and the 12 test journeys are in [jobseeker-journeys](use-cases/jobseeker-journeys.md). Prototype-level cases:
+
 | Case | Behaviour |
 | :-- | :-- |
 | Task resolved by a colleague | Greyed with "Done by {name}"; action becomes "View" |
