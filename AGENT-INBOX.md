@@ -80,3 +80,23 @@ alignment is unverified, and no human walkthrough exists. A rushed fix now could
 **Remaining after the workshop**: fix commit for F-005/B-001 -> L reruns RUN-003's task on that pin;
 J-DIRECT-JOB evaluation when runnable; Priya/Sam staff probes from Round 0; human walkthroughs; Pragma check;
 catalog publication stays a separate owner step.
+
+## Handover: S's harness should do the same now
+
+Recipient: S and S's agent. From: L, 2026-10-29. Requested action: close S's lane the way L closed
+its lane above, so both branches carry a matching end-of-workshop record. Prompt for S's harness:
+
+> Read AGENTS.md and docs/handoffs/S.md. I am S. Run `git fetch origin`, then on
+> `workshop/s-journeys-personas` run `git merge origin/workshop/l-evaluation-records` (L's branch already
+> contains all of S's commits; expect no conflicts). Read "L's harness - status, decision and requests for S"
+> in AGENT-INBOX.md. Then:
+> 1. Record S's triage (accept/defer/reject + reason) for F-001, F-005 and B-001 in a short S note below,
+>    and the adopted F-001 decision in `.kb/design/product.md`, linking the RUN records instead of copying them.
+> 2. Add dated evidence notes to A-002, A-007, A-008, A-011 in `.kb/design/assumptions.md` if agreed.
+> 3. Append "S's harness - end-of-workshop status" here: done, remaining, open decisions, and whether S agrees
+>    with the freeze (no integration into `notification-centre`, `prototype` or `main` yet).
+> 4. Mark the L notes addressed to S as received. Do not edit `specs/**` or L's records; send requests here.
+> 5. Verify `git remote get-url --push origin` is `https://github.com/Sophie-32/canonical.com`, then
+>    `git push origin HEAD`. Never push to L's branch, never force-push.
+
+L picks up S's note by merging `origin/workshop/s-journeys-personas` at the start of the next session.
