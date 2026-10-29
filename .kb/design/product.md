@@ -1,6 +1,9 @@
 # Careers notification centre: product
 
-Status: **draft spec, not yet built.** Prototype lives in `docs/` (static HTML, GitHub Pages, branch `prototype`).
+Status: **initial prototype built; design rules remain draft.** Implementation
+was pulled from the fork's `notification-centre` branch at `9d0155cd` on
+2026-10-29; `prototype` pointed to the same commit. The static experience lives
+in `docs/`. See the [build notes](user-flows/notification-centre/steps/step-01-build-persona-notification-centre.md).
 
 ## Goal
 
@@ -35,6 +38,15 @@ Out of scope: real authentication, email/webhook/PagerDuty delivery, digest sche
 | D6 | Primary action says *where* (e.g. "Review candidate"), not *how* | Schema action guidance |
 | D7 | Persona switcher is demo scaffolding, not a design proposal | Avoids implying users switch identity |
 | D8 | Work happens on branch `notification-centre` (a `prototype/…` name collides with the existing `prototype` branch) | Git ref hierarchy |
+
+D8 records the original implementation branch choice. Workshop coordination now
+uses separate experience and evidence branches under the
+[ownership and handoff agreement](../../docs/workshop.md). `origin` names only
+`Sophie-32/canonical.com`; Canonical upstream is not configured as a remote.
+The original product choices above are preserved, including any differences from
+the [draft acceptance proposal](../../specs/001-notification-centre/spec.md).
+Adopted product decisions stay here; walkthrough evidence and dispositions live
+in [the linked review package](../../specs/001-notification-centre/reviews/README.md).
 
 ## Open questions
 

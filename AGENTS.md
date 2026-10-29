@@ -141,3 +141,13 @@ python -m pip install -U djlint
 
 - `README.md` — project overview, setup, development workflow, and common commands
 - `AGENTS.md` — instructions and conventions for AI agents/contributors working in the repository
+
+## Spec-first prototype workflow
+
+- Start at [the spec catalog](docs/specs.md) and read the package on its declared branch.
+- `spec.md` owns intent, lifecycle, and checkpoints; `plan.md` owns approach; `tasks.md` owns execution. Save review evidence and finding dispositions in the package's `reviews/` directory.
+- Only the owner clears checkpoints. Drafting a spec or saving a review does not authorize work beyond a pending gate.
+- Read `INBOX.md` and `AGENT-INBOX.md`; preserve unresolved handoffs until resolved or transferred to durable package records.
+- Push only to `https://github.com/Sophie-32/canonical.com`. `origin` MUST name that fork; verify `git remote get-url --push origin` before every push. Never push to `canonical/canonical.com`, add it as a push destination, or use `--all`, `--mirror`, or force pushes. The upstream remote was removed deliberately.
+- For the two-person workshop, read [ownership and handoff rules](docs/workshop.md). Use separate clones/worktrees and branches; edit only your lane's files. Review the agreed prototype commit, not a moving branch. Copilot can launch the model reviewers; record their actual identities. This session establishes foundations; execution belongs to the participant sessions, not a deferred-work backlog.
+- Use `wfk lint` for offline workflow checks alongside the repository's required checks. See [workflow setup](docs/workflow.md) for invocation and limits.

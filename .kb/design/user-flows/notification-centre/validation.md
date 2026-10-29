@@ -1,6 +1,15 @@
-# Validation plan: three agent jobseekers
+# Validation: participant workshop handoff
 
-Three agents act as different jobseekers and try the deployed prototype. Findings feed the next iteration. Agents are a cheap first pass; they do not replace sessions with real users.
+The evaluation owner uses Copilot to launch independent Gemini, Claude and GPT
+walkthroughs of the experience owner's agreed prototype revision. The
+[workshop agreement](../../../../docs/workshop.md) defines file ownership, fixture
+handoff and branches; the [review protocol](../../../../specs/001-notification-centre/reviews/README.md)
+defines the model/persona matrix, evidence and triage. This is the ready foundation
+for participant sessions, not a deferred-work item or a completed review.
+
+The three jobseeker variants below preserve the original validation brief as
+scenario inputs. The complete review matrix also covers hiring managers and
+recruiters. Agents provide simulated evaluation; human evidence is recorded separately.
 
 ## Agent personas
 
@@ -37,6 +46,11 @@ Three agents act as different jobseekers and try the deployed prototype. Finding
 
 ## Output
 
-One findings file per agent under `user-flows/notification-centre/findings/`, then a consolidated list of changes recorded in [product.md](../../product.md) as decisions.
+Use one durable run record per independent walkthrough under
+[`specs/001-notification-centre/reviews/`](../../../../specs/001-notification-centre/reviews/README.md),
+using its template and findings index. This supersedes the original proposed
+`user-flows/notification-centre/findings/` output path so there is one evidence
+home. Link adopted product choices to [product.md](../../product.md), accepted
+fixes to their specs/change commits, and verification to the original-task retest.
 
 Back to [overview](overview.md).
