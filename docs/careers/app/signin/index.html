@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Sign in</title><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../../../static/css/styles.css"></head><body><main class="p-strip"><div class="row"><div class="col-8"><p class="p-heading--5">Simulated sign-in · no real authentication</p><h1 class="p-heading--2">Sign in to continue</h1>
+<p>You are going to: <strong>Complete application, Cloud Solutions Architect (REQ-CSA-02)</strong>.</p>
+<p><button class="p-button--positive" id="go">Continue as Alex Morgan (simulated)</button></p></div></div></main>
+<script>var K="careers-notif-v1";var next=new URLSearchParams(location.search).get("next")||"../../notifications/index.html";
+function go(){var s={};try{s=JSON.parse(localStorage.getItem(K))||{}}catch(e){}s.persona="alex";s.signedIn=true;localStorage.setItem(K,JSON.stringify(s));location.replace(next)}
+var cur={};try{cur=JSON.parse(localStorage.getItem(K))||{}}catch(e){}
+if(cur.signedIn&&cur.persona==="alex")location.replace(next);document.getElementById("go").onclick=go;</script></body></html>
