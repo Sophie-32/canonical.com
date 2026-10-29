@@ -17,6 +17,12 @@ Canonical upstream; the fork is the only remote, named `origin`.
 
 ## Task brief for L's harness
 
+**Start concurrently now**: use [Round 0](../../specs/001-notification-centre/reviews/round-0.md)
+to evaluate the existing centre at its fixed revision while S develops the next
+journeys. It supplies the runnable personas, neutral tasks, snapshot server and
+reset instructions. Do not wait for S's entire journey catalog. Apply the steps
+below to each newly handed-over slice; retesting waits for an actual fix revision.
+
 1. Read [AGENTS.md](../../AGENTS.md), [workshop ownership](../workshop.md), the
    [assumption register](../../.kb/design/assumptions.md),
    [entry seeds](../../.kb/design/user-flows/notification-centre/entry-contexts.md),

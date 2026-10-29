@@ -1,6 +1,9 @@
 # Current work
 
 **Next tasks**: Foundation handoff using [the two-person agreement](../../docs/workshop.md).
+L starts [Round 0](reviews/round-0.md) immediately on the existing centre while
+S develops the next journey slice. New-slice evaluation and fix retests follow
+their runnable handoffs; no wait for the entire experience lane is required.
 S starts from [the S brief](../../docs/handoffs/S.md) on
 `workshop/s-journeys-personas`; L uses [the L brief](../../docs/handoffs/L.md) on
 `workshop/l-evaluation-records`.
@@ -25,6 +28,7 @@ acceptance checkpoint and does not retroactively gate the imported prototype.
 - [x] T009 Seed an explicit assumption register and source-message/subject/destination scenarios.
 - [x] T010 Assign S/L file ownership and write self-contained agent handoffs.
 - [x] T011 Validate the updated assumption/handoff package on L's declared branch.
+- [x] T012 Preserve S's new journey/resilience notes and prepare an immediate fixed-baseline review packet.
 
 ## Known limits
 
@@ -42,6 +46,11 @@ standalone CLI availability in this checkout is not an execution blocker.
   no broken paths.
 - Assumption/S-L update: workflow lint passed without errors/warnings; local links
   checked across 28 documents; whitespace checks passed. No UI/assets changed.
+- Concurrent-start update: preserved S's new documentation; workflow lint passed
+  without errors/warnings and local links passed across 31 documents. The detached
+  `4e067fa6` snapshot served careers, centre, workspace, notification JS and CSS
+  with HTTP 200. Its temporary smoke-check server was stopped. No browser or
+  model walkthrough result is claimed; Round 0 is ready for L's participant session.
 - `git diff --check`: passed. Runtime checks were not run for documentation changes.
 - Imported UI/assets: no changes relative to `9d0155cd` under `docs/careers` or
   `docs/static`. Fork is the sole remote, named `origin`.

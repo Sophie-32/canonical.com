@@ -32,6 +32,13 @@ Read in order:
 
 ## Task brief for S's harness
 
+**Start concurrently now**: develop the next journey/experience slice while L
+uses [Round 0](../../specs/001-notification-centre/reviews/round-0.md) to review a
+fixed copy of the existing centre. Your new jobseeker journeys and resilience
+notes from commit `4e067fa6` have been preserved in these workshop branches.
+Hand over one runnable slice at a time; you do not need to complete every journey
+before L can evaluate. Do not edit L's fixed review snapshot.
+
 - Flesh out jobseeker personas by lifecycle and goal, not just role: first-time
   visitor, returning applicant, matching-role browser and unfinished applicant.
   Keep hiring manager/recruiter journeys connected to their assigned work.

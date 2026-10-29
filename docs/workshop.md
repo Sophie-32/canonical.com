@@ -49,6 +49,21 @@ are shared foundation files: nominate one editor before changing them again.
 L maintains catalog numbering when a finding becomes a spec. S edits the shared
 assumption register; L links evidence and proposes updates without concurrent edits.
 
+## Start both lanes immediately
+
+S develops the next persona/journey/experience slice. L starts
+[Round 0](../specs/001-notification-centre/reviews/round-0.md) against the existing
+centre pinned at `4e067fa6ecfc073263890ef7a029674cc3c4f917`, using a detached
+snapshot and isolated browser state. That packet contains neutral tasks and
+fixture/reset instructions for Alex, Priya and Sam. S's new journey/resilience
+documentation is preserved; it does not imply those screens are already built.
+
+L can launch baseline walkthroughs, capture/reproduce stumbles, triage findings
+and prepare scoped fixes while S works. A new email/direct-link journey waits
+only until its slice is runnable; a fix retest waits for its actual fix commit.
+After each handoff L evaluates that pinned version while S continues the next
+slice. Never evaluate a moving branch or pull a new version mid-run.
+
 ## One handoff contract
 
 The experience owner supplies a handoff identifying:

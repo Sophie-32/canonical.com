@@ -11,6 +11,12 @@ foundations; it does not claim authorship or validation of the imported UI.
 
 ## Existing surfaces
 
+Update on 2026-10-29: S's original branch history was rewritten, and its new tip
+is `4e067fa6ecfc073263890ef7a029674cc3c4f917`. The prototype UI/assets match the
+original baseline exactly. S's external-reference cleanup and new journey/
+resilience documentation were imported as ordinary commits without overwriting
+the workshop foundations. [Round 0](round-0.md) uses the new full revision as its pin.
+
 - `docs/careers/index.html`: careers entry with notification navigation.
 - `docs/careers/notifications/index.html`: centre and demo persona selector.
 - `docs/careers/app/index.html?n=<id>`: simulated workspace.

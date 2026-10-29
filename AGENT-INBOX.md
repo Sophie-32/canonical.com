@@ -20,3 +20,5 @@ Recipient: L. Scope: remaining workflow/specifications/evidence on
 `workshop/l-evaluation-records`. Read [L's brief](docs/handoffs/L.md).
 Requested action: use S's journey handoff to prepare independent Copilot reviews
 and the assumption/finding/decision/fix/retest record. No review result is implied.
+Immediate action: [Round 0](specs/001-notification-centre/reviews/round-0.md) is
+ready against the existing centre; start it while S develops the next slice.

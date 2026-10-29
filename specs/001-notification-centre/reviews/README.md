@@ -8,6 +8,7 @@ Start with the [workshop ownership/handoff](../../../docs/workshop.md) and
 S supplies the [assumptions](../../../.kb/design/assumptions.md) and
 [entry-context mapping](../../../.kb/design/user-flows/notification-centre/entry-contexts.md);
 L owns execution/evidence. Start with [L's brief](../../../docs/handoffs/L.md).
+For immediate work concurrent with S, use [the runnable Round 0 packet](round-0.md).
 
 ## Review matrix
 
