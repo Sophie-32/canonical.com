@@ -52,6 +52,10 @@ Agent C's anxious, deadline-driven profile maps best to the costliest cases (2, 
 | See no hiring-side notifications as a jobseeker | 3 of 3 |
 | Report confusion on read vs done | 0 serious |
 
+## Results
+
+Round 1 (current build, 2026-10-29): see [consolidated findings](findings/consolidated.md).
+
 ## Output
 
 One findings file per agent under `user-flows/notification-centre/findings/`, then a consolidated list of changes recorded in [product.md](../../product.md) as decisions.

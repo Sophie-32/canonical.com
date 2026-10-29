@@ -38,6 +38,7 @@ Out of scope: real authentication, email/webhook/PagerDuty delivery, digest sche
 | D13 | **A notification stays meaningful after the thing it refers to changes.** Store a snapshot of the job (title, location, requisition ID, date applied) at application time; always show the application's current status even if the posting is gone; every dead end has a clear fallback (e.g. "This posting was closed on 3 Oct. Your application status: Not selected") | Covers most of the [stumbling blocks](user-flows/notification-centre/edge-cases.md): deleted, edited or reposted jobs, purged data, expired links |
 | D14 | Prioritise **prompted, action-required** visits when designing and testing (email or push brings the person in to do something) | Broken links and stale status there cost the candidate something real; see the [coverage grid](user-flows/notification-centre/use-cases/jobseeker-journeys.md#coverage-grid) |
 | D15 | Application updates and job alerts are separate notification categories with separate preferences | Switching off alerts must never silence application status |
+| D16 (proposed, undecided) | Opening a notification marks it read (D2), but the bell should reflect **needs action**, not just unread | All 3 round-1 agents found the bell dropping while a task stayed open confusing. See [findings](user-flows/notification-centre/findings/consolidated.md) F2 |
 
 ## Open questions
 
