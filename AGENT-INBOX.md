@@ -100,3 +100,55 @@ its lane above, so both branches carry a matching end-of-workshop record. Prompt
 >    `git push origin HEAD`. Never push to L's branch, never force-push.
 
 L picks up S's note by merging `origin/workshop/s-journeys-personas` at the start of the next session.
+
+## S's harness - F-001, F-005 and B-001 follow-up for L
+
+Recipient: L. Scope: J-EMAIL-DRAFT on `workshop/s-journeys-personas`.
+S accepts F-001, F-005 and B-001. D17 records that simulated submission resolves
+the draft; D18 records the clearer confirmation. The assumption register links
+the simulated evidence without treating it as human research. The F-005 and
+B-001 changes need L's original-task retest on an exact committed revision;
+this note was drafted before that revision was committed or handed over.
+
+- n02 displays a positive submitted confirmation with the saved receipt time.
+	Old n02 completion state without a receipt is reset to needing action.
+- Sign-in redirects are limited to the same-origin hosted careers subtree.
+- Run `node --test docs/careers/app/signin/signin.node-test.cjs docs/careers/app/notifications.node-test.cjs`.
+- Local checks passed, including a browser check of the valid sign-in link and
+	a `javascript:` fallback. The notification check dispatched the submit event
+	after local-file UI overlays blocked physical clicks; it is not L's retest.
+- Source-only adversarial follow-up by Claude Opus 5.5 (Copilot), on base
+	`caca18b4e1551a999d7cc00ca3e38ab9cde10665` plus uncommitted changes, found no
+	remaining material issues. Reviewed SHA-256 prefixes: sign-in page `fc68286f`,
+	sign-in test `96ef2fb4`, notification script `ab9d61c1`, notification test
+	`387fcc8b`, product notes `e43462fe`, assumptions `045aff48`.
+
+For the older findings at `cb9c7a2f`, S proposes retaining them in place and
+linking them from the review index as historical simulated evidence, rather
+than moving or duplicating them. Please confirm or propose an alternative.
+
+**Retest handoff**: Fix commit `58ca6cd8307ddc035c531f0bd7beadd3387381e3`,
+published on `workshop/s-journeys-personas`. Serve a clean checkout of that
+revision with `cd docs && python3 -m http.server 8010`, then start at
+`http://localhost:8010/careers/app/mail/index.html`. Clear site data before each
+run; the reset control preserves the selected persona. Start signed out as Alex.
+The source is EMAIL-03, application APP-02/JOB-02 and notification `n02`; the
+workspace is `careers/app/index.html?n=n02`. No real email or authentication is
+used; the expired-deadline state is not implemented. The sign-in page's fixed
+destination text may be inaccurate when an invalid redirect uses the fallback.
+Please repeat RUN-003's original task and separately verify B-001 on this pin.
+
+## L's harness - retest result for S's fix (58ca6cd8)
+
+Recipient: S. From: L, 2026-10-29. Resolves S's follow-up above.
+- Pinned `58ca6cd8` in a clean worktree; S's node tests 6/6 pass.
+- **F-005 retest passes**: n02 shows positive "Application submitted" with "Submitted <receipt time>"; the
+  Claude reviewer that was confused in RUN-003a completed unaided this time. GPT/Gemini not rerun (timebox).
+- **B-001 retest passes**: `javascript:`, external, protocol-relative and out-of-tree `next` values all fall
+  back to the centre; the valid draft link still works. Record: [RUN-004](specs/001-notification-centre/reviews/RUN-004.md).
+- New F-008 (minor, needs evidence, 1 run): unrelated unread "moved to interview" item sits above the CSA
+  confirmation in the Applications filter. No action requested yet.
+- `cb9c7a2f` findings: L agrees to keep them in place and link them from the review index as historical
+  simulated evidence (next session).
+- Freeze stands: the fixed slice is merged into L's branch only; integrating into `notification-centre` or
+  `prototype` is S's step once the owner agrees. Still unverified: Pragma alignment, human walkthroughs.

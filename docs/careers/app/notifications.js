@@ -84,7 +84,7 @@
   S.persona = S.persona && PERSONAS[S.persona] ? S.persona : 'alex';
   S.read = S.read || {};   // per persona: id -> true
   S.done = S.done || {};   // shared per role: id -> name
-  S.done = S.done || {};
+  if (S.done.n02 && !S.receipt) delete S.done.n02;
   save(S);
 
   function persona() { return PERSONAS[S.persona]; }
@@ -142,9 +142,9 @@
       shown.forEach(function (n) {
         var li = el('li', 'p-list__item'); li.dataset.id = n.id;
         var unread = !isRead(n), done = isDone(n);
-        var cls = n.positive ? 'positive' : CLS[n.sev];
+        var cls = (done && n.id === 'n02') || n.positive ? 'positive' : CLS[n.sev];
         var box = el('div', 'p-notification--' + cls + ' is-borderless');
-        if (done) box.style.opacity = '.6';
+        if (done && n.id !== 'n02') box.style.opacity = '.6';
         if (unread) { box.style.borderLeft = '4px solid #0e8420'; box.style.paddingLeft = '.5rem'; }
         var c = el('div', 'p-notification__content');
         var h = el('h3', 'p-notification__title');
@@ -153,7 +153,7 @@
         h.appendChild(a); c.appendChild(h);
         c.appendChild(el('p', 'p-notification__message', done && n.doneBody ? n.doneBody : n.body));
         var meta = el('p', 'p-text--small u-text--muted');
-        var bits = [n.when, unread ? 'Unread' : 'Read'];
+        var bits = [done && n.id === 'n02' ? (S.receipt ? 'Submitted ' + S.receipt : 'Submitted') : n.when, unread ? 'Unread' : 'Read'];
         if (done) bits.push(doneBy(n) ? 'Done by ' + doneBy(n) : 'Done');
         else if (n.actionable) bits.push('Needs action');
         meta.textContent = bits.join(' · ');
