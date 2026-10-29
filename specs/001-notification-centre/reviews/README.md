@@ -86,8 +86,9 @@ are conventions, not evidence that a run has occurred.
 | [F-002](RUN-001.md#f-002-gemini-reported-badge-1-and-action-required-label-not-reproduced) | RUN-001c | Not reproduced | n/a | Proposed reject: reviewer perception error | Pending S triage | n/a | n/a | n/a |
 | [F-003](RUN-001.md#f-003-demo-only-footer-visible-on-the-jobseeker-destination) | RUN-001a/b/c | Observed | Minor | Proposed defer: prototype scaffolding; FIX-001 covers n02 | Pending S triage | Linked to FIX-001 | n/a | n/a |
 | [F-004](RUN-001.md#f-004-501-on-cookie-preference-post) | RUN-001a | Console only | n/a | Proposed reject: static-server limitation | Pending S triage | n/a | n/a | n/a |
-| [F-005](RUN-002.md#new-findings) | RUN-002a, RUN-003a, Alex, `487831cf` | 2 runs; L reproduction | Minor | Proposed accept: submitted item keeps caution style and reminder time | Pending S triage | Bug for S | None | Not run |
+| [F-005](RUN-002.md#new-findings) | RUN-002a, RUN-003a/b, Alex, `487831cf` | 3 runs; L reproduction | Minor | Proposed accept: submitted item keeps caution style and reminder time | Pending S triage | Bug for S | None | Not run |
 | [F-006](RUN-002.md#new-findings) | RUN-002c | Not reproduced | n/a | Proposed reject: reviewer perception error | Pending S triage | n/a | n/a | n/a |
+| [F-007](RUN-003.md#outcome) | RUN-003c | Not reproduced | n/a | Proposed reject: reviewer perception error (third Gemini Flash instance; weight its centre-page reports accordingly) | Pending S triage | n/a | n/a | n/a |
 | [B-001](RUN-003.md#source-inspection-labelled-separately-not-a-walkthrough-observation) | Source inspection, `487831cf` | Code | Security | Proposed accept: unvalidated `next` redirect | Pending S triage | Bug for S | None | Not run |
 
 ## Completion rule
