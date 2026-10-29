@@ -46,4 +46,4 @@ and no contradicting "not been submitted" text, with needs-action cleared.
 
 | Assumption | Journey/source | Finding | Decision | Fix | Commit | Retest |
 |---|---|---|---|---|---|---|
-| A-008, A-011 | J-CAREERS-CENTRE, careers home, n02 | F-001 | pending S triage | this draft | pending | pending |
+| A-008, A-011 | J-CAREERS-CENTRE, careers home, n02 | F-001 | pending S triage | this draft | `487831cf` (S's J-EMAIL-DRAFT slice) | [RUN-002](RUN-002.md): pass 3/3 |
