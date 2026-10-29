@@ -82,14 +82,15 @@ are conventions, not evidence that a run has occurred.
 
 | Finding | Run/persona/revision | Evidence | Severity | Disposition and reason | Decision | Fix spec/bug | Change | Retest |
 |---|---|---|---|---|---|---|---|---|
-| [F-001](RUN-001.md#f-001-complete-application-can-be-marked-done-while-the-draft-remains-unsubmitted) | RUN-001a/b/c, Alex, `4e067fa6` | 3/3 simulated runs; L reproduction with screenshots | Major | Proposed accept: false completion on a deadline task | Pending S triage | [FIX-001](FIX-001-draft-submission.md) (draft) | `487831cf` (S, J-EMAIL-DRAFT) | [RUN-002](RUN-002.md): pass 3/3 |
+| [F-001](RUN-001.md#f-001-complete-application-can-be-marked-done-while-the-draft-remains-unsubmitted) | RUN-001a/b/c, Alex, `4e067fa6` | 3/3 simulated runs; L reproduction with screenshots | Major | Accepted by S: false completion on a deadline task | [D17](../../../.kb/design/product.md) | [FIX-001](FIX-001-draft-submission.md) | `487831cf` (S, J-EMAIL-DRAFT) | [RUN-002](RUN-002.md): pass 3/3 |
 | [F-002](RUN-001.md#f-002-gemini-reported-badge-1-and-action-required-label-not-reproduced) | RUN-001c | Not reproduced | n/a | Proposed reject: reviewer perception error | Pending S triage | n/a | n/a | n/a |
 | [F-003](RUN-001.md#f-003-demo-only-footer-visible-on-the-jobseeker-destination) | RUN-001a/b/c | Observed | Minor | Proposed defer: prototype scaffolding; FIX-001 covers n02 | Pending S triage | Linked to FIX-001 | n/a | n/a |
 | [F-004](RUN-001.md#f-004-501-on-cookie-preference-post) | RUN-001a | Console only | n/a | Proposed reject: static-server limitation | Pending S triage | n/a | n/a | n/a |
-| [F-005](RUN-002.md#new-findings) | RUN-002a, RUN-003a/b, Alex, `487831cf` | 3 runs; L reproduction | Minor | Proposed accept: submitted item keeps caution style and reminder time | Pending S triage | Bug for S | None | Not run |
+| [F-005](RUN-002.md#new-findings) | RUN-002a, RUN-003a/b, Alex, `487831cf` | 3 runs; L reproduction | Minor | Accepted by S: submitted item kept caution style and reminder time | [D18](../../../.kb/design/product.md) | Bug, S | `58ca6cd8` | [RUN-004](RUN-004.md): pass (L browser check + Claude 1/1) |
 | [F-006](RUN-002.md#new-findings) | RUN-002c | Not reproduced | n/a | Proposed reject: reviewer perception error | Pending S triage | n/a | n/a | n/a |
 | [F-007](RUN-003.md#outcome) | RUN-003c | Not reproduced | n/a | Proposed reject: reviewer perception error (third Gemini Flash instance; weight its centre-page reports accordingly) | Pending S triage | n/a | n/a | n/a |
-| [B-001](RUN-003.md#source-inspection-labelled-separately-not-a-walkthrough-observation) | Source inspection, `487831cf` | Code | Security | Proposed accept: unvalidated `next` redirect | Pending S triage | Bug for S | None | Not run |
+| [B-001](RUN-003.md#source-inspection-labelled-separately-not-a-walkthrough-observation) | Source inspection, `487831cf` | Code | Security | Accepted by S: unvalidated `next` redirect | S, AGENT-INBOX | Bug, S | `58ca6cd8` | [RUN-004](RUN-004.md#b-001-coordinator-browser-check-observed): pass, 4 hostile values fall back |
+| [F-008](RUN-004.md#run-004a-run-003s-email-task-simulated-review) | RUN-004a, `58ca6cd8` | 1 run | Minor | Needs evidence: unrelated unread interview item above the confirmation | Pending S | n/a | n/a | n/a |
 
 ## Completion rule
 
